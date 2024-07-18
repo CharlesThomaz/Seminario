@@ -1,0 +1,52 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin-bottom: 60px; /* Espaço para o footer */
+    min-height: 100vh; /* Garante que a altura mínima da página seja pelo menos a altura da janela */
+    position: relative;
+    padding-bottom: 80px; /* Espaço adicional para garantir que o conteúdo não seja obscurecido pelo footer */
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.jumbotron {
+    background-color: #343a40;
+    color: white;
+    padding: 4rem 2rem;
+    margin-bottom: 20px;
+}
+
+.jumbotron .display-4 {
+    font-weight: bold;
+}
+
+.jumbotron .lead {
+    font-size: 1.5rem;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.list-unstyled {
+    margin-bottom: 20px;
+}
+
+.btn-block {
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 15px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

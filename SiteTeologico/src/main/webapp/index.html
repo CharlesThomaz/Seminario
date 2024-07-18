@@ -6,13 +6,44 @@
     <title>Materiais de Aula - Curso de Formação Teológica</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Adicione favicon -->
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Materiais de Aula - Curso de Formação Teológica</h1>
-        <p class="text-center">Aqui você pode baixar os materiais de aula e ver as notas.</p>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Formação Teológica</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#materiais">Materiais</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resultados">Resultados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-        <div class="mt-5">
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="display-4">Curso de Formação Teológica</h1>
+                <p class="lead">Aqui você pode baixar os materiais de aula e ver as notas.</p>
+            </div>
+        </section>
+    </header>
+
+    <main class="container mt-5">
+        <section id="materiais" class="mb-5">
             <h2>Slides das Aulas</h2>
             <ul class="list-unstyled">
                 <li>
@@ -20,9 +51,9 @@
                         Baixar - Bibliologia Aula 1 - (17/07/2024)
                     </a>
                 </li>
-                
                 <!-- Adicione mais materiais conforme necessário -->
             </ul>
+
             <h2>Materias complementares</h2>
             <ul class="list-unstyled">
                 <li>
@@ -30,18 +61,26 @@
                         Baixar - Declarações de Fé: Ser X Conter - (17/07/2024)
                     </a>
                 </li>
-                
                 <!-- Adicione mais materiais conforme necessário -->
             </ul>
-        </div>
+        </section>
 
-        <div class="mt-5">
-            <h2>Resultados </h2>
-            
-        </div>
-    </div>
+        <section id="resultados" class="mb-5">
+            <h2> Notas</h2>
+            <p>Aqui você pode visualizar as notas dos exercícios avaliativos.</p>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#" download="/" class="btn btn-primary">
+                        Ainda não tem notas lançadas
+                    </a>
+                </li>
+                      <!-- Inserir conteúdo dos resultados de notas aqui -->
+                
+            </ul>
+        </section>
+    </main>
 
-    <footer class="bg-light text-center p-3 mt-5">
+    <footer class="bg-light text-center text-muted py-3 mt-5">
         <p>&copy; 2024 Formação Teológica. Todos os direitos reservados.</p>
     </footer>
 
