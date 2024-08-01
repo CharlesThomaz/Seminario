@@ -24,6 +24,12 @@
         .result {
             margin-top: 20px;
         }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -137,35 +143,35 @@
             </div>
             <div class="question">
                 <label>13. Qual livro do Novo Testamento é uma carta de Paulo?</label><br>
-                <input type="radio" name="q13" value="a"> a) Hebreus<br>
-                <input type="radio" name="q13" value="b"> b) Apocalipse<br>
-                <input type="radio" name="q13" value="c"> c) Filipenses<br>
-                <input type="radio" name="q13" value="d"> d) Atos dos Apóstolos
+                <input type="radio" name="q13" value="a"> a) Apocalipse<br>
+                <input type="radio" name="q13" value="b"> b) Gálatas<br>
+                <input type="radio" name="q13" value="c"> c) João<br>
+                <input type="radio" name="q13" value="d"> d) Tiago
             </div>
             <div class="question">
-                <label>14. Qual livro do Antigo Testamento é conhecido por seus hinos e poesia?</label><br>
-                <input type="radio" name="q14" value="a"> a) Gênesis<br>
-                <input type="radio" name="q14" value="b"> b) Salmos<br>
-                <input type="radio" name="q14" value="c"> c) Isaías<br>
-                <input type="radio" name="q14" value="d"> d) Juízes
+                <label>14. Qual é o objetivo principal da Bíblia?</label><br>
+                <input type="radio" name="q14" value="a"> a) Ensinar sobre Deus e sua vontade para a humanidade<br>
+                <input type="radio" name="q14" value="b"> b) Ser um registro histórico<br>
+                <input type="radio" name="q14" value="c"> c) Ser um livro de moralidade<br>
+                <input type="radio" name="q14" value="d"> d) Entreter os leitores
             </div>
             <div class="question">
-                <label>15. O que a Bíblia não é?</label><br>
-                <input type="radio" name="q15" value="a"> a) Um livro de receitas<br>
-                <input type="radio" name="q15" value="b"> b) Um guia para a vida cristã<br>
-                <input type="radio" name="q15" value="c"> c) Um livro histórico<br>
-                <input type="radio" name="q15" value="d"> d) Uma coleção de histórias religiosas
+                <label>15. Qual é o primeiro livro do Novo Testamento?</label><br>
+                <input type="radio" name="q15" value="a"> a) Marcos<br>
+                <input type="radio" name="q15" value="b"> b) Lucas<br>
+                <input type="radio" name="q15" value="c"> c) Mateus<br>
+                <input type="radio" name="q15" value="d"> d) João
             </div>
-            <button type="button" onclick="submitQuiz()">Enviar Respostas</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
-        <div class="result" id="result"></div>
+        <div id="result" class="result"></div>
     </div>
 
     <script>
-        function submitQuiz() {
-            const form = document.getElementById('quizForm');
-            const result = document.getElementById('result');
-            const answers = {
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const correctAnswers = {
                 q1: 'b',
                 q2: 'a',
                 q3: 'b',
@@ -178,29 +184,46 @@
                 q10: 'a',
                 q11: 'a',
                 q12: 'b',
-                q13: 'c',
-                q14: 'b',
-                q15: 'a'
+                q13: 'b',
+                q14: 'a',
+                q15: 'c'
             };
 
             let score = 0;
-            let totalQuestions = Object.keys(answers).length;
+            const form = document.getElementById("quizForm");
+            const resultDiv = document.getElementById("result");
+            const name = document.getElementById("name").value;
 
-            for (let [key, value] of Object.entries(answers)) {
-                let selected = form.querySelector(`input[name=${key}]:checked`);
-                if (selected && selected.value === value) {
+            // Limpar resultados anteriores
+            resultDiv.innerHTML = '';
+
+            for (let [question, correctAnswer] of Object.entries(correctAnswers)) {
+                const userAnswer = form.elements[question].value;
+                const questionElement = document.querySelector(`input[name="${question}"][value="${userAnswer}"]`).parentNode;
+
+                if (userAnswer === correctAnswer) {
                     score++;
+                    questionElement.classList.add('correct');
+                } else {
+                    questionElement.classList.add('incorrect');
                 }
             }
 
-            let percentage = (score / totalQuestions) * 100;
-            result.innerHTML = `<h2>Você acertou ${score} de ${totalQuestions} questões.</h2>
-                                <h3>Sua nota: ${percentage.toFixed(2)}%</h3>`;
-        }
+            const totalQuestions = Object.keys(correctAnswers).length;
+            const percentageScore = (score / totalQuestions) * 100;
+
+            resultDiv.innerHTML = `
+                <h2>Resultado:</h2>
+                <p>${name}, você acertou ${score} de ${totalQuestions} perguntas (${percentageScore.toFixed(2)}%).</p>
+            `;
+
+            // Exibir as respostas corretas e incorretas
+            for (let [question, correctAnswer] of Object.entries(correctAnswers)) {
+                const questionElement = document.querySelector(`input[name="${question}"][value="${correctAnswer}"]`).parentNode;
+                questionElement.classList.add('correct-answer');
+            }
+        });
     </script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
