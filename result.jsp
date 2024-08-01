@@ -21,5 +21,9 @@
             out.println("<p>Continue estudando para melhorar seu conhecimento.</p>");
         }
     %>
+
+    <li class="nav-item">
+        <a class="nav-link" href="index.html">Página Inicial</a>
+    </li>
 </body>
 </html>
