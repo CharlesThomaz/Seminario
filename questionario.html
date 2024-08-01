@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário de Bibliologia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Contato</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Início</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <h1>Questionário de Bibliologia</h1>
+    <form id="quizForm">
+        <p>1. Quantos livros compõem a Bíblia?</p>
+        <input type="radio" id="q1a" name="q1" value="0">
+        <label for="q1a">64</label><br>
+        <input type="radio" id="q1b" name="q1" value="1">
+        <label for="q1b">66</label><br>
+        <input type="radio" id="q1c" name="q1" value="0">
+        <label for="q1c">72</label><br>
+
+        <p>2. Quem é considerado o autor dos primeiros cinco livros da Bíblia?</p>
+        <input type="radio" id="q2a" name="q2" value="1">
+        <label for="q2a">Moisés</label><br>
+        <input type="radio" id="q2b" name="q2" value="0">
+        <label for="q2b">Davi</label><br>
+        <input type="radio" id="q2c" name="q2" value="0">
+        <label for="q2c">Salomão</label><br>
+
+        <p>3. Quantas epístolas há no Novo Testamento?</p>
+        <input type="radio" id="q3a" name="q3" value="0">
+        <label for="q3a">19</label><br>
+        <input type="radio" id="q3b" name="q3" value="1">
+        <label for="q3b">21</label><br>
+        <input type="radio" id="q3c" name="q3" value="0">
+        <label for="q3c">23</label><br>
+
+        <input type="button" value="Enviar" onclick="calculateScore()">
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const form = document.getElementById('quizForm');
+            const answers = form.querySelectorAll('input[type="radio"]:checked');
+            answers.forEach(answer => {
+                score += parseInt(answer.value);
+            });
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<p>Você acertou ${score} de 3 questões.</p>`;
+            if (score == 3) {
+                resultDiv.innerHTML += "<p>Parabéns! Você acertou todas as perguntas!</p>";
+            } else {
+                resultDiv.innerHTML += "<p>Continue estudando para melhorar seu conhecimento.</p>";
+            }
+        }
+    </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
