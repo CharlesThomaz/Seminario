@@ -1,52 +1,111 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     background-color: #f4f4f9;
-    margin-bottom: 60px; /* Espaço para o footer */
-    min-height: 100vh; /* Garante que a altura mínima da página seja pelo menos a altura da janela */
-    position: relative;
-    padding-bottom: 80px; /* Espaço adicional para garantir que o conteúdo não seja obscurecido pelo footer */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1; /* Faz com que o conteúdo principal ocupe o espaço restante */
 }
 
 .navbar {
-    margin-bottom: 20px;
+    margin-bottom: 0; /* Remove a margem inferior do navbar */
+    border-bottom: none; /* Remove qualquer borda inferior */
+    background-color: #343a40; /* Cor escura para o navbar */
+}
+
+.navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff; /* Cor dos links no navbar */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #dcdcdc; /* Cor dos links no hover */
 }
 
 .jumbotron {
-    background-color: #343a40;
+    background-color: #004d40; /* Cor verde escura para destaque */
     color: white;
     padding: 4rem 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 0; /* Remove a margem inferior da jumbotron */
 }
 
 .jumbotron .display-4 {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 2.5rem;
 }
 
 .jumbotron .lead {
     font-size: 1.5rem;
+    font-weight: 400;
 }
 
 .container h2 {
     margin-bottom: 20px;
     color: #343a40;
+    font-weight: 600;
+    border-bottom: 2px solid #004d40; /* Cor verde escura para destaque */
+    padding-bottom: 10px;
 }
 
 .list-unstyled {
     margin-bottom: 20px;
 }
 
-.btn-block {
-    text-align: left;
+.list-unstyled li {
+    margin-bottom: 10px;
     font-size: 1.2rem;
+}
+
+.list-unstyled li i {
+    margin-right: 10px;
+    color: #004d40; /* Cor verde escura para os ícones */
+    font-size: 1.5rem; /* Aumenta o tamanho dos ícones */
+}
+
+.btn-primary {
+    background-color: #004d40; /* Verde escuro para os botões */
+    border-color: #004d40;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #003d33; /* Verde ainda mais escuro para o hover */
+    border-color: #003d33;
 }
 
 footer {
     background-color: #343a40;
     color: white;
     padding: 15px 0;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    text-align: center;
+}
+/* Definindo a cor personalizada para a navbar */
+.navbar-custom {
+    background-color: #343a40; /* Cor escura desejada para a navbar */
+    border-bottom: none; /* Remove qualquer borda inferior, se houver */
+}
+
+.navbar-custom .navbar-brand, .navbar-custom .nav-link {
+    color: #ffffff; /* Cor do texto dos links e do nome da marca */
+}
+
+.navbar-custom .nav-link:hover {
+    color: #dcdcdc; /* Cor dos links no hover */
 }

@@ -1,20 +1,41 @@
+/* Garantir que html e body ocupem a altura total da viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Estiliza o body com layout flexível para garantir que o footer fique no fundo */
 body {
+    display: flex;
+    flex-direction: column;
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
+    background-color: #F4F4F4; /* Cinza Claro */
+    color: #333; /* Cinza Escuro */
     margin: 0;
     padding: 0;
-    min-height: 100vh;
-    position: relative;
-    padding-bottom: 80px; /* Espaço para o footer */
 }
 
+/* Faz com que o conteúdo principal ocupe o espaço restante disponível */
+main {
+    flex: 1;
+}
+
+/* Estiliza o header */
+header {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ajusta a navbar para remover espaços adicionais */
 .navbar {
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    padding: 0;
 }
 
+/* Estilo do jumbotron */
 .jumbotron {
-    background-color: #923030;
-    color: white;
+    background-color: #8B1E3F; /* Vermelho Vinho */
+    color: #EAEAEA; /* Cinza Claro */
     padding: 4rem 2rem;
     margin-bottom: 20px;
     border-radius: 0;
@@ -31,48 +52,83 @@ body {
     font-weight: 300;
 }
 
+/* Estilo dos headings dentro do container */
 .container h2 {
     margin-bottom: 20px;
-    color: #923030;
+    color: #8B1E3F; /* Vermelho Vinho */
     font-weight: bold;
-    border-bottom: 2px solid #923030;
+    border-bottom: 2px solid #D4AF37; /* Ouro Suave */
     padding-bottom: 10px;
 }
 
+/* Estilo da lista não ordenada */
 .list-unstyled {
     margin-bottom: 20px;
 }
 
+/* Estilo dos botões primários */
 .btn-primary {
-    background-color: #923030;
-    border-color: #923030;
-    font-size: 1.2rem;
+    background-color: #8B1E3F; /* Vermelho Vinho */
+    border-color: #8B1E3F; /* Mantém a borda com a mesma cor */
+    color: #EAEAEA; /* Cinza Claro */
+    font-size: 1rem;
     font-weight: bold;
     padding: 10px 20px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
     transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #732626;
-    border-color: #732626;
+    background-color: #6D1A31; /* Vermelho Vinho mais escuro para Hover */
+    border-color: #6D1A31; /* Mantém a borda com a mesma cor */
 }
 
-.btn-primary .img {
-    height: 80px; /* Ajusta a altura da imagem */
-    width: auto; /* Mantém a proporção da imagem */
-    margin-left: 10px;
+/* Estilo dos botões específicos da IEJ */
+.btn-iej {
+    background-color: #4CAF50; /* Verde Esmeralda */
+    border-color: #4CAF50; /* Mantém a borda com a mesma cor */
+    color: #EAEAEA; /* Cinza Claro */
 }
 
+.btn-iej:hover {
+    background-color: #388E3C; /* Verde Esmeralda mais escuro ao passar o mouse */
+    border-color: #2C6B2F;
+}
+
+/* Estilo dos cards */
+.card {
+    border: none; /* Remove a borda padrão */
+    border-radius: 8px; /* Borda arredondada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites do card */
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Espaçamento interno */
+}
+
+.card-img-top {
+    height: 150px; /* Altura da imagem */
+    width: 150px; /* Largura da imagem */
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço sem distorção */
+    margin-right: 15px; /* Espaçamento entre a imagem e o texto */
+}
+
+/* Alinha o texto ao centro e ajusta o padding */
+.card-text {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Estilo do footer fixo no fundo da página */
 footer {
-    background-color: #343a40;
-    color: white;
+    background-color: #343A40; /* Cinza Grafite */
+    color: #EAEAEA; /* Cinza Claro */
     padding: 15px 0;
+    text-align: center;
     width: 100%;
-    position: absolute;
+    position: relative; /* Corrige a posição do footer */
     bottom: 0;
-    left: 0;
-    right: 0;
 }

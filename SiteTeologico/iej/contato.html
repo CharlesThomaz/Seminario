@@ -6,8 +6,72 @@
     <title>Contato - Charles Thomaz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- Adicione favicon -->
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .navbar-nav .nav-link {
+            font-size: 1.1rem;
+        }
+
+        .jumbotron {
+            background-color: #1ea344; /* Azul de acordo com o esquema do site */
+            color: white;
+            padding: 4rem 2rem;
+            margin-bottom: 20px;
+            border-radius: 0;
+            text-align: center;
+        }
+
+        .jumbotron .display-4 {
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+
+        .jumbotron .lead {
+            font-size: 1.5rem;
+        }
+
+        main .container h2 {
+            margin-bottom: 20px;
+            color: #343a40;
+            font-weight: bold;
+            border-bottom: 2px solid #1ea344; /* Azul para destaque */
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li i {
+            margin-right: 10px;
+            color: #1ea344; /* Azul para ícones */
+        }
+
+        a {
+            color: #1ea344; /* Azul para links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,8 +82,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
                     </li>
                 </ul>
             </div>
@@ -28,6 +95,7 @@
         <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="display-4">Entre em Contato</h1>
+                <p class="lead">Fique à vontade para nos enviar suas dúvidas e comentários.</p>
             </div>
         </section>
     </header>
@@ -37,19 +105,22 @@
             <h2>Informações de Contato</h2>
             <ul>
                 <li>
+                    <i class="fab fa-linkedin"></i>
                     <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/charles-thomaz-2b667225b/" target="_blank">Charles Thomaz</a>
                 </li>
                 <li>
+                    <i class="fas fa-phone"></i>
                     <strong>Celular e WhatsApp:</strong> <a href="tel:+5531981216718">+55 31 98121-6718</a>
                 </li>
                 <li>
+                    <i class="fas fa-envelope"></i>
                     <strong>Email:</strong> <a href="mailto:charlesthomaz87@gmail.com">charlesthomaz87@gmail.com</a>
                 </li>
             </ul>
         </section>
     </main>
 
-    <footer class="bg-light text-center text-muted py-3 mt-5">
+    <footer class="bg-dark text-center text-light py-3 mt-5">
         <p>&copy; 2024 Charles Thomaz. Todos os direitos reservados.</p>
     </footer>
 

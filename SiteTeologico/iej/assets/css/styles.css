@@ -1,14 +1,26 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f9;
-    margin-bottom: 60px; /* Espaço para o footer */
-    min-height: 100vh; /* Garante que a altura mínima da página seja pelo menos a altura da janela */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
     position: relative;
-    padding-bottom: 80px; /* Espaço adicional para garantir que o conteúdo não seja obscurecido pelo footer */
+    padding-bottom: 80px;
+}
+
+header {
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .jumbotron {
@@ -16,28 +28,48 @@ body {
     color: white;
     padding: 4rem 2rem;
     margin-bottom: 20px;
+    border-radius: 0;
+    text-align: center;
 }
 
 .jumbotron .display-4 {
     font-weight: bold;
+    font-size: 2.5rem;
 }
 
 .jumbotron .lead {
     font-size: 1.5rem;
 }
 
+.container {
+    max-width: 960px;
+}
+
 .container h2 {
     margin-bottom: 20px;
     color: #343a40;
+    font-weight: bold;
+    border-bottom: 2px solid #1ea344;
+    padding-bottom: 10px;
 }
 
 .list-unstyled {
     margin-bottom: 20px;
 }
 
-.btn-block {
-    text-align: left;
-    font-size: 1.2rem;
+.btn-primary {
+    background-color: #1ea344;
+    border-color: #1ea344;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #149e32;
+    border-color: #149e32;
 }
 
 footer {
@@ -49,4 +81,14 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
+    text-align: center;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
 }
