@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Teologia</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    <div class="container">
+        <h3>Por favor, digite seu nome para ver sua nota</h3>
+        <form id="studentForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <button type="button" onclick="checkStudent()">Verificar</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // Função para remover acentos dos caracteres
+        function removeAccents(str) {
+            return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+
+        // Definindo um objeto para armazenar alunos e suas notas
+        const alunosNotas = {
+            "ANA PAULA MIRANDA DE AZEVEDO": "",
+            "AILTON DIAS TEIXEIRA": "10",
+            "ALBERTO GERALDO PIRES MIRANDA JUNIOR": "",
+            "CAMILA APARECIDA VELOSO": "",
+            "CLÁUDIA LEONARDO COSTA": "10",
+            "CAMILLE FERNANDES SILVA": "10",
+            "CARINE FERNANDES SILVA": "10",
+            "CÁSSIO MURILO DE OLIVEIRA": "10",
+            "CLEBER ANTÔNIO ABREU": "10",
+            "CLEONICE VIANA SILVA": "9",
+            "DANIEL RODRIGUES NUNES": "",
+            "DEIVISSON PITTA LOUREDO": "",
+            "JEDSON": "",
+            "DENIZE ACÁSSIA MAIA DOS SANTOS": "10",
+            "ÉRICA GERALDA OTONI": "10",
+            "FÁBIO DIAS TEIXEIRA": "10",
+            "FILEMON ANDRÉ DOS SANTOS": "",
+            "GABRIEL GUILHERME DE PAULA": "10",
+            "CRISTINA": "",
+            "GERALDA ALZIRA DE ALMEIDA FERNANDES": "9.5",
+            "GELSON PEREIRA": "10",
+            "GERALDO CRISTIANO MARTINS F. XAVIER": "",
+            "ISAÍAS VIANA TEXEIRA": "10",
+            "ISMAEL VIANA TEIXEIRA": "10",
+            "JOÃO PAULO BERALDO DA SILVA": "10",
+            "JOSÉ ARMANDO ALVES": "10",
+            "JESSÉ ITALLO DE LIMA SOUZA": "10",
+            "JÚLIO CÉSAR PRADO": "10",
+            "LUIZ ANTONIO PRUDENCINI": "10",
+            "LUIS HENRIQUE ARAÚJO RUAS": "10",
+            "MARCOS GABRIEL TOMAZ MOREIRA": "10",
+            "MARIA JÚLIA DIAS TEIXEIRA": "10",
+            "MARIA JULIANA ALVES LESSA": "10",
+            "PATRICK FLAVIANO MORAIS": "9",
+            "POLLYANA SANTIAGO RODRIGUES SILVA MIRANDA": "",
+            "ROSANGELA DE F.V. SILVA": "7",
+            "SELMINHA DA PENHA FRANCO": "10",
+            "STEPHANIE LUIZA GUIMARÃES BRAGA": "10",
+            "VÂNDILSON ANTÔNIO SILVA": "",
+            "VANDERLEY CARVALHO LESSA": "10",
+            "MOISES": "",
+            "WARLEY BARBOSA DOS SANTOS LOPES": "10",
+            "SALETE RIBEIRO DE SOUZA PEÇANHA DA CRUZ": "10"
+        };
+
+        function checkStudent() {
+            const nameInput = document.getElementById('name').value.trim().toUpperCase();
+            const normalizedInput = removeAccents(nameInput);
+            const resultDiv = document.getElementById('result');
+            let found = false;
+
+            // Itera sobre os alunos para verificar se algum nome contém o nome digitado
+            for (const aluno in alunosNotas) {
+                const alunoNormalizado = removeAccents(aluno);
+                if (alunoNormalizado.includes(normalizedInput)) {
+                    resultDiv.innerHTML = `<p>Aluno encontrado: ${aluno}. Nota: ${alunosNotas[aluno]}</p>`;
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                resultDiv.innerHTML = '<p>Aluno não cadastrado.</p>';
+            }
+        }
+    </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
